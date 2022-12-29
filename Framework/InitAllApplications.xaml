@@ -4,7 +4,7 @@
     <x:Property Name="out_BoolValidateInitApplications" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1178,2302</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1298,4462</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -32,6 +32,8 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.IO</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -71,16 +73,18 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1188,2237" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1308,4397" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="1146,106" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="1266,92" sap2010:WorkflowViewState.IdRef="LogMessage_1">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <mca:CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">LogLevel.Trace</mca:CSharpValue>
@@ -92,36 +96,73 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <Sequence DisplayName="iniciar sesión pajarito" sap:VirtualizedContainerService.HintSize="1146,1968" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="iniciar sesión pajarito" sap:VirtualizedContainerService.HintSize="1266,4177" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1104,1876" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1204,4066" sap2010:WorkflowViewState.IdRef="RetryScope_1">
         <ui:RetryScope.ActivityBody>
           <ActivityAction>
-            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1062,1702" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1162,3891" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1020,1610" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1120,3803" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                 <TryCatch.Try>
-                  <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Google" sap:VirtualizedContainerService.HintSize="982,1383" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Version="V2">
+                  <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Google" sap:VirtualizedContainerService.HintSize="1082,3575" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Version="V2">
                     <uix:NApplicationCard.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="948,1167" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1048,3318" sap2010:WorkflowViewState.IdRef="Sequence_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activar" sap:VirtualizedContainerService.HintSize="906,86" sap2010:WorkflowViewState.IdRef="Activate_2">
+                          <If sap:VirtualizedContainerService.HintSize="1006,437" sap2010:WorkflowViewState.IdRef="If_1">
+                            <If.Condition>
+                              <InArgument x:TypeArguments="x:Boolean">
+                                <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">!File.Exists(Path.Combine(in_Config["RutaArchivosRecibidos"].ToString(),"Output_SAC.xlsx"))</mca:CSharpValue>
+                              </InArgument>
+                            </If.Condition>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="476,248" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,158" sap2010:WorkflowViewState.IdRef="CopyFile_1">
+                                  <ui:CopyFile.Destination>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">Path.Combine(in_Config["RutaArchivosGenerados"].ToString(),"Output_SAC.xlsx")</mca:CSharpValue>
+                                    </InArgument>
+                                  </ui:CopyFile.Destination>
+                                  <ui:CopyFile.Path>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">Path.Combine(in_Config["RutaFormatos"].ToString(),"Output_SAC.xlsx")</mca:CSharpValue>
+                                    </InArgument>
+                                  </ui:CopyFile.Path>
+                                </ui:CopyFile>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                          <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activar" sap:VirtualizedContainerService.HintSize="1006,87" sap2010:WorkflowViewState.IdRef="Activate_2">
                             <ui:Activate.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="bde7530b-2208-44b2-b977-2de28935376e">
                                 <ui:Target.TimeoutMS>
@@ -133,56 +174,116 @@
                               </ui:Target>
                             </ui:Activate.Target>
                           </ui:Activate>
-                          <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="906,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Version="V1">
+                          <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="1006,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Version="V1">
                             <uix:NGoToUrl.Url>
                               <InArgument x:TypeArguments="x:String">
-                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">in_Config["LinkPajarito"].ToString()</mca:CSharpValue>
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">in_Config["LinkSAC"].ToString()</mca:CSharpValue>
                               </InArgument>
                             </uix:NGoToUrl.Url>
                           </uix:NGoToUrl>
-                          <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Consultar'" sap:VirtualizedContainerService.HintSize="906,827" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Timeout="20" Version="V1">
+                          <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Ingresar'" sap:VirtualizedContainerService.HintSize="1006,976" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Timeout="30" Version="V1">
                             <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="476,611" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,759" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Consulta Portados Intranet" sap:VirtualizedContainerService.HintSize="434,416" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="960173b8-e169-44ae-9cb3-c5a5220dda35" Version="V2">
-                                  <uix:NApplicationCard.Body>
-                                    <ActivityAction x:TypeArguments="x:Object">
-                                      <ActivityAction.Argument>
-                                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                                      </ActivityAction.Argument>
-                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,200" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate 'INPUT  btnConsultar'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Activate_1">
-                                          <ui:Activate.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="538bfc36-62d5-4ea4-8146-62ad14b6fb36" InformativeScreenshot="2412cef909f3ee6d95882f31eb5eca12" Selector="&lt;webctrl id='btnCancelar' tag='INPUT' type='submit' /&gt;">
-                                              <ui:Target.TimeoutMS>
-                                                <InArgument x:TypeArguments="x:Int32" />
-                                              </ui:Target.TimeoutMS>
-                                              <ui:Target.WaitForReady>
-                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                              </ui:Target.WaitForReady>
-                                            </ui:Target>
-                                          </ui:Activate.Target>
-                                        </ui:Activate>
-                                      </Sequence>
-                                    </ActivityAction>
-                                  </uix:NApplicationCard.Body>
-                                  <uix:NApplicationCard.TargetApp>
-                                    <uix:TargetApp Area="1272, -8, 1296, 1000" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="e9eff81508a0e0ecf3dd86cd9c488ce9.png" Selector="&lt;html app='chrome.exe' title='Consulta Portados Intranet' /&gt;" Url="http://132.147.170.110:8080/Consulta_Portados.aspx" />
-                                  </uix:NApplicationCard.TargetApp>
-                                </uix:NApplicationCard>
-                                <Assign sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT contenido-form:us…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="358,217" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Version="V1">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://sacinspira.claro.com.co/SAC-web/faces/login.xhtml" DesignTimeRectangle="1004, 367, 212, 28" ElementType="InputBox" FriendlyName="'INPUT contenido-form:us…'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="0304a512-e236-40ab-af04-e14a6cd8251d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANgAAAAgCAYAAABw4baZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOdSURBVHhe7Zw/axVBFMX3+yj4FfwDWipaaCVYCRZ2WthZ26QRRBAEwSKN8CpNkwRRNCFELIyoqDwQEzWokIBVRs6aEw7X3dl5ya5EOAM/9s3cvWfu7NybfS/FVMnNzW2w5gJzcxuwVRsbm/WH2dnZND09bYyZkNFolObn59N4PK5rSVu1sLScUGS4cfXHljFmQtZ+bqXll6/So5mZNDc3t11af1r17sM4vX7z1gVmzB75tP6rLjJ9k1Wfv6ynZ4tLLjBjegBvMn2LVWvfvqenzxddYMb0AL4u4jcZmwvMmJ5BLbG5wIzpGReYMQPiAjNmQPZVgT1ZXEmHjx6vr032EvrQMKYvXGD/mKvXrtc02fYzK++/piPHTqTRw8eNdtPMviqwPnCBDYMLbHcUFRiT9sbUrVRVVc3N2/dqtM/7uRm06aYguc5fuLhjP3Dw0E4xxOLo0uH4bjRghx/Hm3TUrkWRW0P0VZs+L+q1xYcrxmFH/+PqZj0nn3NXfJcuX6nt8IEvbdFX48OcGgNjm7p5p9bhXLSbbooLDBvBTeRGcLNxZTLERMC9uonQiH0mAcZYHE0JRRs0NXGgwdhyGjEWRTXox0RSTd7btgYmJX312fDeOE9TfFFHYyiJT+dUoi6ueq/2NdboZ8qY6A3GDYx93ZRoi0mkmwYwzuRU36jTBvWpmdOIsRCNQccJ1hcLqm0NMWFjYqpvV3x6L/x1TqUrPgX36lo5J+MD8MUf0Nw6TBm9F5h+hi2XNECTU3WjjgI7EgpJgCt8qJnTiLGAtnmYZAB6ut7cGvQzbNCFPuaJvl3xYb5TZ87VdvhQgzql8SnQpp+izwQ6eK46X1yHKeO/fINFDe3nNJoSuGmOOB77cX5dQyyamJhtsaIf42P/7v0H9ZWa0S/2Y3wK4mCsTXbOefL02ew6TBm9F1hMEthKv16pbtTRDYa/+kCfmjkNjSWXMNSkDdqla4i6sPHZRN9cfOjTv+sN0xWfEuOLWroW1ck9L9NO7wWGPjeDXz90U+Lm64ZG3ajDJIMdSYEx+OK/m6UamkgcU2hHjBzDG0STK7cG9DU+TXwADYzz/tyzopauh0wan/Y1PsDniqvGy9ho55zsm26KCswYsztcYMYMiAvMmAFxgRkzIC4wYwbiryMDfOiNMf2BQ29wRiKbj20zpicaj21bWHrhg0eN2QPZg0d9dLYxewO/uVBYjUdnb1/d3NwGaC4wN7fBWkq/AdwXBgB/bVAVAAAAAElFTkSuQmCC" InformativeScreenshot="4291d6c04671f96349be91516965c805.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inspira - Claro' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                                  </uix:NTypeInto.Target>
+                                  <uix:NTypeInto.Text>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">in_Config["UserSac"].ToString()</mca:CSharpValue>
+                                    </InArgument>
+                                  </uix:NTypeInto.Text>
+                                </uix:NTypeInto>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT contenido-form:cl…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="358,217" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Version="V1">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://sacinspira.claro.com.co/SAC-web/faces/login.xhtml" DesignTimeRectangle="1003, 402, 213, 28" ElementType="InputBoxPassword" FriendlyName="'INPUT contenido-form:cl…'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='form-control' aaname='' /&gt;" Guid="0f44bad6-4618-46d8-935b-dcc8dabc10c3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANkAAAAgCAYAAACfI92nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVHhe7dw9S8NQFIDh+9fEwX8hOPmLXFzdMmayXZIgiLaE6qJFRUuWVls/kBaceuy5bST4ASHeox3eAw9t0xY63JfQ5ThhGMZ0iIxhjMdNpzP/JEkSiaIIQANxHEuaZlIUhe+pOq6T90RD0w+OXuYAGuqdX0ir3V7Elq7yWo67uSukf3VNZEAAw6c3H1r1juaGD49y0s2JDAhE72jVu5m7nzzL8WmXyIBAxq9z/x+tHCIDDGhP5RAZYIDIAGNEBhgjMsAYkQHGiAwwRmSAsVqRXd6OZWNzS5xzEh8e+Wv6qK/1ur4/GM1ke2fXX9vbP/iX7wHrqFZkeoj1MCs92P3B5OOAl4e8jECVIfz196q/GVgX3MkAY7UiA9AckQHGiAwwRmSAMSIDjBEZYIzIAGNEBhj6sn6ARTpAWLpIJ8uyVWKLyFgJB4TjV8K1Pq2E6+RnLDcFAvhxuSlruoHfW67pTr9f0716ZBjGaIiMYUxH5B0MLjUjJI767gAAAABJRU5ErkJggg==" InformativeScreenshot="2cd8e101aa0e126cca70c00ee1da83b4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inspira - Claro' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                                  </uix:NTypeInto.Target>
+                                  <uix:NTypeInto.Text>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">in_Config["PassSac"].ToString()</mca:CSharpValue>
+                                    </InArgument>
+                                  </uix:NTypeInto.Text>
+                                </uix:NTypeInto>
+                                <uix:NClick ClickType="Single" DisplayName="Click 'Ingresar'" sap:VirtualizedContainerService.HintSize="358,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Version="V1">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://sacinspira.claro.com.co/SAC-web/faces/login.xhtml" DesignTimeRectangle="1052, 438, 100, 23" ElementType="Button" FriendlyName="'Ingresar'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='btn btn-sm backTransparente paddingMarginNone' aaname='Ingresar' check:text='Ingresar' /&gt;" Guid="01f1d477-142c-463a-b0d9-9027afdc4a04" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAbCAYAAACQqsrOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOzSURBVGhD7ZjbS1RRFMb9p3ruyaeglyDwIUIoStAuUJglRVmoWESm0UWNSpNMDUtTvJSZkpqlZZbk3XFGx7nfr2dW51u2Tx4bfXLsNO6BD8+ctfbeZ9Zv77XWMcPlcpGUcZUxvSeTpIwrCcjgkoAMLgnI4JKADC4JyOCSgAyulAPy932g6LyJlo6eTmqX2lopBxQc/kyxVRuZc84mtUttrR0FtFpSTqHx72Qvf0CB/iFSvD6Ku9zkbeuk2b37tTFL2Sco8H6QbRBO4UrBVR7ruP+Yffxv+1n221UUNS+zD+5b8gooNDquzY15MJ+YW2e3OcjT1Kpbe7XoBoUnp0jx+SlmWSHXkwZeE2tbThWycO2sqiXv6271t9nJcadGG7/d2lFA+FFKIEgxq00FNEiOymoKjX2jRDxOvq5e9l88eIQiUzOUiEQoMDiiwutSv89SdHGJx3pa2tkvMjtPij/Aii6YyNPcRqvFtzjwSKmOe4/IVdfIa0GWk+dp4UA226Jzi+zrrm9mf2wQzCnGx50u8nX2sgAg8nOG17ZeKmXhOu50sy9gYuOJ37vd2nFAiWiM/D19mh27FzsSu9V0OJfcDS2UCIfJ+bBe5xMc+kSUSOgBqbt8fXBwMgASkMW95fwrawHveMPPgGfxtq4BgXzd7ygyPUeLWcco/GOKgQCmsOMagDcCiszM69ZJlf7JCcLf9T4IuvCBP1KPOTdf52MrqyAlGNIBgoRdBD84MqYFUgjQEHwBGs+A1Gcrq6T5fVl/jRdzCuEkbQQkniPVMiQgcb3ex1p0XReYzQCFJyY5LW4U6h78AAmnDukTJwtzup+9+ANIXV/MKYQTJwH99vG2dLCPrVSf1z1Nr4gUfYpbDwiBR9oJfZnQ7kGYE6kPqdN0KIc8jS/JerlMsyPdIoWZ887xeNQo1Cphx7zcNEhAaz4rF66R4vFSdMnCkJCCnNV1FDWZuXHYDBCEpoCDpzYMGIcagZSVCIXJXlGtNQloOtDZIfiBgWEGhPc0rn9qjQx+HCXz8TNcE/29AxRbtkpAwgff7TfvUtzu4KYAQuF21tTpApMMEOR+2sTdFX/UsYCNscJuvVjCNQkgAA6+onUHMF97D9/nj6JQ6OuEmiLTOMVtl7gGqcF01T5Pak9XGQ7QSmEx73rxXiSEnY22emNtSncZ8gQhpaDeoDVGB4bCn4iptUFtkZGGko1JVxkSECDgRRU1RvuXS13TroMD/Tc1aLdKAjK4JCCDSwIyuCQgQyuTfgE2U81U8ykwuwAAAABJRU5ErkJggg==" InformativeScreenshot="04200607b85688b3363124ee43b28e8f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inspira - Claro' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,80" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://sacinspira.claro.com.co/SAC-web/faces/login.xhtml" DesignTimeRectangle="1052, 438, 100, 23" ElementType="Button" FriendlyName="'Ingresar'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='btn btn-sm backTransparente paddingMarginNone' aaname='Ingresar' /&gt;" Guid="9cea3175-2475-4f64-9f21-9fdc27f8aa95" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAbCAYAAACQqsrOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOzSURBVGhD7ZjbS1RRFMb9p3ruyaeglyDwIUIoStAuUJglRVmoWESm0UWNSpNMDUtTvJSZkpqlZZbk3XFGx7nfr2dW51u2Tx4bfXLsNO6BD8+ctfbeZ9Zv77XWMcPlcpGUcZUxvSeTpIwrCcjgkoAMLgnI4JKADC4JyOCSgAyulAPy932g6LyJlo6eTmqX2lopBxQc/kyxVRuZc84mtUttrR0FtFpSTqHx72Qvf0CB/iFSvD6Ku9zkbeuk2b37tTFL2Sco8H6QbRBO4UrBVR7ruP+Yffxv+1n221UUNS+zD+5b8gooNDquzY15MJ+YW2e3OcjT1Kpbe7XoBoUnp0jx+SlmWSHXkwZeE2tbThWycO2sqiXv6271t9nJcadGG7/d2lFA+FFKIEgxq00FNEiOymoKjX2jRDxOvq5e9l88eIQiUzOUiEQoMDiiwutSv89SdHGJx3pa2tkvMjtPij/Aii6YyNPcRqvFtzjwSKmOe4/IVdfIa0GWk+dp4UA226Jzi+zrrm9mf2wQzCnGx50u8nX2sgAg8nOG17ZeKmXhOu50sy9gYuOJ37vd2nFAiWiM/D19mh27FzsSu9V0OJfcDS2UCIfJ+bBe5xMc+kSUSOgBqbt8fXBwMgASkMW95fwrawHveMPPgGfxtq4BgXzd7ygyPUeLWcco/GOKgQCmsOMagDcCiszM69ZJlf7JCcLf9T4IuvCBP1KPOTdf52MrqyAlGNIBgoRdBD84MqYFUgjQEHwBGs+A1Gcrq6T5fVl/jRdzCuEkbQQkniPVMiQgcb3ex1p0XReYzQCFJyY5LW4U6h78AAmnDukTJwtzup+9+ANIXV/MKYQTJwH99vG2dLCPrVSf1z1Nr4gUfYpbDwiBR9oJfZnQ7kGYE6kPqdN0KIc8jS/JerlMsyPdIoWZ887xeNQo1Cphx7zcNEhAaz4rF66R4vFSdMnCkJCCnNV1FDWZuXHYDBCEpoCDpzYMGIcagZSVCIXJXlGtNQloOtDZIfiBgWEGhPc0rn9qjQx+HCXz8TNcE/29AxRbtkpAwgff7TfvUtzu4KYAQuF21tTpApMMEOR+2sTdFX/UsYCNscJuvVjCNQkgAA6+onUHMF97D9/nj6JQ6OuEmiLTOMVtl7gGqcF01T5Pak9XGQ7QSmEx73rxXiSEnY22emNtSncZ8gQhpaDeoDVGB4bCn4iptUFtkZGGko1JVxkSECDgRRU1RvuXS13TroMD/Tc1aLdKAjK4JCCDSwIyuCQgQyuTfgE2U81U8ykwuwAAAABJRU5ErkJggg==" InformativeScreenshot="93a657341981594c92dd10221baa247f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inspira - Claro' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                          <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Menú'" sap:VirtualizedContainerService.HintSize="1006,1055" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Timeout="10" Version="V1">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,838" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NClick ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="358,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Version="V1">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://sacinspira.claro.com.co/SAC-web/faces/secure/inicio.xhtml" DesignTimeRectangle="28, 131, 40, 40" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl parentid='menu' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menu' tag='I' type='' class='fa fa-th-large' aaname='' /&gt;" Guid="455025db-cfa4-4d60-a974-63975af8d105" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEvSURBVFhH7dk9ioRAEIbhPa1H0AMYiKCmgiAmBp7CRDAVL2Bo5B+IcW1/skrDdDA9uy4UVPBCI0XxIDMyjF/HcRCnBPx0fMHzPFPbttQ0zcf1fU/7vt/Lce66jsqypCzLrMvznOq6Pm3XzhO8rislSUKO4/y6qqru5TibZmyDDcYbPI4jeZ5nHLYtTdNz8bZtFEWRccY22GB8FLwsCwVBYJyxTcB6AlYJWE/AKgHrCVglYD0dHIahcca2F/A0TeT7vnHYtqIozsUIZ9OMbbDBeIPRMAwUxzG5rvtx+A173QmEM66ZZt8NJtiunTeYS3zBrD4S7L50uBN//VhDOJtmbPuX57CABfyTgFUC1hOwSsB6AlbxB7P7Qxs99coA10yz7wbTyysDTgn46ZiBD/oGWO9ayr2/dI4AAAAASUVORK5CYII=" InformativeScreenshot="96b61110dc34d919575a6e92ab4bb5fa.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inspira - Claro' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <uix:NClick ClickType="Single" DisplayName="Click 'Requerimientos'" sap:VirtualizedContainerService.HintSize="358,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Version="V1">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://sacinspira.claro.com.co/SAC-web/faces/secure/inicio.xhtml" DesignTimeRectangle="23, 309, 420, 36" ElementType="Text" FriendlyName="'Requerimientos'" FullSelectorArgument="&lt;webctrl id='idIrReclamacionesVista' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='idIrReclamacionesVista' tag='A' type='' class='js-arrow' aaname='Requerimientos                                     ' check:innerText='Requerimientos' /&gt;" Guid="fcf881ad-76bc-4c1c-b09d-40569196cf95" ImageBase64="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" InformativeScreenshot="d346c36ae55224e952682baa70b1f409.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inspira - Claro' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <uix:NClick ClickType="Single" DisplayName="Click 'Solicitudes'" sap:VirtualizedContainerService.HintSize="358,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Version="V1">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://sacinspira.claro.com.co/SAC-web/faces/secure/inicio.xhtml" DesignTimeRectangle="38, 345, 405, 36" ElementType="Text" FriendlyName="'Solicitudes'" FullSelectorArgument="&lt;webctrl id='idIrSubSolicitudesReclamacionesVista' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='idIrSubSolicitudesReclamacionesVista' tag='A' type='' class='js-arrow' aaname='Solicitudes                                                 ' check:innerText='Solicitudes' /&gt;" Guid="d91f0c8c-0b10-4565-965a-18506bc1f17d" ImageBase64="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" InformativeScreenshot="611d6700241f798d5dd14e8c26591ba1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inspira - Claro' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <uix:NClick ClickType="Single" DisplayName="Click 'Consultar'" sap:VirtualizedContainerService.HintSize="358,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Version="V1">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://sacinspira.claro.com.co/SAC-web/faces/secure/inicio.xhtml" DesignTimeRectangle="53, 381, 390, 36" ElementType="Text" FriendlyName="'Consultar'" FullSelectorArgument="&lt;webctrl id='idIrConsultarReclamacionesVista' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='idIrConsultarReclamacionesVista' tag='A' type='' class='' aaname='Consultar                                                         ' check:innerText='Consultar' /&gt;" Guid="fda4da63-1e94-486d-9d11-76f3f54253d8" ImageBase64="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" InformativeScreenshot="04486b39a842cfb27d8668412879482e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inspira - Claro' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,80" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://sacinspira.claro.com.co/SAC-web/faces/secure/inicio.xhtml" DesignTimeRectangle="33, 128, 96, 36" ElementType="Text" FriendlyName="'Menú'" FullSelectorArgument="&lt;webctrl tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' type='' class='p-menu' aaname='Menú' /&gt;" Guid="54551602-6deb-42ee-94f3-0922c153c4d9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGQAAAAoCAYAAAAIeF9DAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO4SURBVGhD7ZrJSywxEIf9a90R3HEBUUERVHDDBRcQQb0IHsSLiKAIKrgdPLiBC+4b6pzr8QWq6ZmJvOl29OXN5PDR6aS6ks4vqYo9FiQSCfG4gxfEMbwgjuEFcQwviGN4QRzDC+IYBevr6xKHg4MD+fj4CBxR3tvbk5mZGRkbG4vMxMSErK6uyvPzc9IA842CwsJCicvc3FzgiLLNJiq9vb3y+vqaNMh84luCDA8PGydvb2/S3d1ttYlKfX293NzcpA00X8iKIC8vL9LZ2Wm1iYoXxDIpmeIFyT5eEMfwgjiGF8QxvCCO4QVxDC/IP4I/fsNfOhQvyC/Du01OTkpjY6P1PXNOEFbd3d2d8QF8RbDZPT4+BjaUbTbZhG904+PjUlxcbN4TQRhnql3OCcKz+FB/8/PzaTa3t7fS1NQU2Oh7/CQ6roaGBllbW5P393erXdYE6erqstpEJduCMPEIELbZ3t6WkpKSwOY3BCFnXF1dyefnp7Vd+ZYgU1NTgSPKNpuotLe3y9PTU9Igo5AqSFFRkVmR2s7KHBwcTOozLMj19bUMDAxIaWmpaeM6OjqatEgWFhZMW0VFhezs7MjQ0JCxo6+Ojg65uLgwdoQpjRxcwz8t0Kf6ODo6CuoL6urqJA78hhEeJGXqbLaZ0tPTI+fn54HPOKQKAn19fUGIOD09laqqqqR2FeTy8tLE9nCbQj3t2KkgZWVlUl1dnWbb1tYmDw8P8QTRQq4QFoRwVVlZaTg+PjbtS0tLpq21tVVqampMmckhlHD64Z7Vvry8bHxx1d0yPT1tfKgg0NLSIvv7+7K7u2vyA3XslK2tLS8IhAXp7+83u44yyZ1QSEjknklVOybn/v5empubzT2/7RDv8cWOZcVTr5OqgpCHyEfa98bGhqmHxcXFeILYQkcm/A8hi5dmhVNmR2xubpowQ1+Hh4dJduHnvgIfHJHDOSQ8mfhXW2xiCaIO4uB6UuelNWewmmtra009SZ0d8NUOIUnraYjcwykNv9hQH0cQfPM8dvigD5uPrBx7QRX/LkwSL69+o5IqCBNKUlf/eupKtQvnEHKO5oDZ2VnzDPW6ADMVJNw3PvDFKW5lZcU8a/OR84JQx3+zqH/CFcdSm93JyUnaCUyxnbL+Jgh15JXw3zzAfXl5uSnnpSAIgBDUjYyMmN1gs4OzszOT1PUTB1cOB6xstYkiCJ9yONmFdwT3eROysgWiEbK42tp/Ci+IY3hBHMML4hheEMfwgjiGF8QxvCCO4QVxioT8AeeB6Q5eYr/yAAAAAElFTkSuQmCC" InformativeScreenshot="a37ba56efe8f0ba687251e23f4480738.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inspira - Claro' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                          <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Cédula Asesor'" sap:VirtualizedContainerService.HintSize="1006,391" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="6eed958c-ebcb-4d0f-a7a0-532bcc90f44e" Timeout="30" Version="V1">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="476,174" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Boolean">
-                                      <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">out_BoolValidateInitApplications</mca:CSharpReference>
+                                      <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">out_BoolValidateInitApplications</mca:CSharpReference>
                                     </OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
@@ -192,36 +293,32 @@
                               </Sequence>
                             </uix:NCheckState.IfExists>
                             <uix:NCheckState.IfNotExists>
-                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,369" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="476,174" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Boolean">
-                                      <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">out_BoolValidateInitApplications</mca:CSharpReference>
+                                      <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">out_BoolValidateInitApplications</mca:CSharpReference>
                                     </OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
                                     <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\\KillAllProcesses.xaml">
-                                  <ui:InvokeWorkflowFile.Arguments>
-                                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
-                                  </ui:InvokeWorkflowFile.Arguments>
-                                </ui:InvokeWorkflowFile>
-                                <Throw sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1">
-                                  <InArgument x:TypeArguments="s:Exception">
-                                    <mca:CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">new BusinessRuleException("No fué posible acceder al portal pajarito")</mca:CSharpValue>
-                                  </InArgument>
-                                </Throw>
                               </Sequence>
                             </uix:NCheckState.IfNotExists>
                             <uix:NCheckState.Target>
-                              <uix:TargetAnchorable BrowserURL="http://132.147.170.110:8080/Consulta_Portados.aspx" DesignTimeRectangle="366, 402, 100, 21" ElementType="Button" FriendlyName="'Consultar'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='' aaname='Consultar' check:text='Consultar' /&gt;" Guid="4d6fef29-bbb5-4a1e-a13c-bdf3755d0fbd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAZCAYAAADdYmvFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG9SURBVGhD7ZRBTsNADEVzRA4Ed+AE7JF6AxaIPZuuWGVBEaiVAClCLZQCg37Fr1zXSahIpg6ypScY253M+DUt7h6qFPglBDlnI6goisARIcg5tYKOjsfBAQlBzglBzskqaDJ7TTIeq/d0claavbk5HU3S4u3T1ZlAFkG4MC6OAWAQyHEgMndILEHnl9NU3i92enOSRdC4fEmrj6/1ha26B7QgnBVnxltv9eeid0HW29OE/BnUUlFD7uZ2/tORtgbIITPkM7UAfS5ZH13NzH3Yw2Ae++NLiOD5uxLbuyB5cf501EEBlMJLX1w/beoI5K1+rDk0/QboczQJQk1/nv11dSkI665wI4h98oI6h7+/EYhgjuhzcODIoabrWoDeh8G6PktX9C5ID8LqAdZA9NDaBHEPGXzb9F77CmI/99T1wQoCOLwcrAUHZAlirk2QhDX2/1VQ23rQgvQwkONAZK5NQFPdegb6udZ1DphrgP8piGsthHXkEawPWhDhpRi8bF2PlMFak0BKYOjPo48xfV5uCdOC+DwE9+HzENV8tYb9/0JQsD8hyDkhyDkhyDmtggIfhCDn7AgKfBKCXFOlb8VUKSdli6B0AAAAAElFTkSuQmCC" InformativeScreenshot="e9101dffdd9613987eb17d73762a3dbd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Consulta Portados Intranet' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+                              <uix:TargetAnchorable BrowserURL="https://sacinspira.claro.com.co/SAC-web/faces/secure/reclamaciones/solicitudes/viewConsultarReclamaciones.xhtml" DesignTimeRectangle="56, 307, 191, 26" ElementType="InputBox" FriendlyName="'INPUT documentoAsesor'" FullSelectorArgument="&lt;webctrl id='j_idt452' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='j_idt452' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ui-state-focus' aaname='' /&gt;" Guid="5694996a-eba6-478e-9d7d-7f7d6e7ed4ed" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMMAAAAeCAYAAACR36pbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOoSURBVHhe7ZzLTiJBGEb72eah5k00MbpTF5roUtSNGRduJjMxXriMxAsqIPc7KMo/fUqrg1Ens6X4Fid2oGF1jt1V1VQ0mUzs5eXFxs/P9jQe2+jxyQajkfUHQ+v2B9bpQd/anq4QM8Kbs/iLx/iM1/iN5/iO9/hPB5EP4fFpHJ/06D7Q7vas0e5avdW2arNl1UbLKlBvCjFbxN7iLx7jM17jN57jO977IKIkhOHIFdRod6xQLFv+umC5/JVlhQgEfMZr/MZzfMd7H0TEpYJCeIOS8te3ls5dWGp315aWlmxhYcEWFxeFmGnwGJ/xGr/xHN9dELH/dBBx78Qlg1I44eev37aysmJra2u2sbFhW1tbtr29LcRMg8ebm5u2urpqy8vLznN8x3v8p4OIwQT3UFw6Mn8ubH193VKplB0dHdnx8bGl02nLZrOWy+WEmEnwF4/xGa93dnbcP3t8x3v8p4OI0TWDCu6lfhwe2sHBgWUyGSsWi1av163ValmnE99fCTHDtNtt5/P9/b3zG8/xHe/xnw4iLhGMshlc7O3tuRNrtZr1ej2Lvn234XBoI6aihJhh8HgwGDiv8RvP9/f3nff4TwcR869MOzHa5hJCOd1u133YxyBESOA3nuM73uM/HcQx9N08LC9yT0U1/X7ffUgxiBDBbzzHdxdD7D8dRKzQsTDBi+fn59ZsNt3JXFKIgb9ChAR+NxoN5zve4z8dRCxb+xi4j/IxADH4YyFCAs/xPYkh7uA1hnrTvcj0E8UwyPADaH8sREjguVs2IIbYf8Ug5pb/ioG5WEbbQAz+WIiQwPN/xsCAglG2X6gghumFCyFCAc+TAfRnMZydnVm1WnWrdUAM/liIkMBzfP8yhtPTU6tUKu4RDCAGfyxESOA5vn+M4W1qlTcfHh7ctBMQgz8WIiTwPIkhmVqdWnRTDGJe+BADi27Tj2OcnJxYuVx2005ADP5YiJDAc3zH++RxjOkH9RSDmBfexeAf1POPcCsGMU9Mx5A8wp38uOeqYJlszkqlkluQ+OwLhAgB/MZzfMf75Mc90z/7zF9e293dnWIQQYPfeI7v7372+W5DgLiSq5uCW5D47EuECAHWGPD89aowtSHAh61i4hMub26tWCpbLS5IVwkRAniMz3iN33iO73ifbBXz5SZi8ckMLoQICbzGbzx3IUxvIqbtJUXQxN7iLx7jM17jN57juw/BbS+pjYdFsLw5i794jM94jd94ju8+hMlkYn8BM6Q+U1tzMkcAAAAASUVORK5CYII=" InformativeScreenshot="b644d37e4271032a3462ab614fdebf6d.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inspira - Claro' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target DesignTimeRectangle="53, 291, 191, 16" ElementType="Text" FriendlyName="'Cédula Asesor'" FullSelectorArgument="&lt;webctrl id='j_idt452' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='j_idt452' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='ui-outputlabel ui-widget form-control-label-combo' aaname='Cédula Asesor:' check:innerText='Cédula Asesor:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMMAAAAUCAYAAAAwRIk9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQcSURBVGhD7VfbThNRFPWfuHl50A8AEl7kEQgv+A0QEn3hHVqQR/wDwEQS9BPg0WgEJJgYg7allF6Alu2scdbkzO6ZTrUiqdkrWWHm7Ms5Z85aM+WeGAyGEGYGgyGCmcFgiGBmMBgi9GSGo6MjGR0dleXl5WjEYOhftJmhVCrJ1NSUDAwMxNzc3IyiScAE8/PzUq/XoxE/2LObXIJG+50aH9gH+zDTGjohYQZXOJq9COkuzQAjcw9YA9ZiMPgQmwGCg/AgGvdLsLe3F45BmBAoAXN0Epkb393dTZiB5nDrOA/n9pmBOWSWuN15uDf00HANA2rj65eE/lJm1bvPFtTrZv3S0lI4D58199vLi8jQPWIzdHoT4zBcEblCJ906LQ6d8ydm0IIkOwnFFVOasDiuqdeh43weWfXaCCQFD+jnxT2nrdlwO4jNwAfPQ0wDhewTP3owznuAvXsxg0ZWHKBp3XW5cwJ6Xg13bwD7aMGm1TPue14UOe877cVw+2gzQ9ZbKO1NCeJQfSLVAvIJU4sqTeys5ZxpAvLN4ZqD0P10nDWa7NttvW9Orp1m4N4Nd4Oufya5Ih0bG5PBwcE2Io9xt48+fN5TUAD6o4eehzVZ9xoQn14f6avR+8JeAPx1a0nkooZIq+e+ssyAHO7dcDfo6h9oHNTQ0FB4jYOcnp6WhYWFsOYmyHHJOPMxhn64Zw1zxsfHQxFhDDHkIBc1GEecNezBOHq7PTk/6PbzkfO6NSTXBuKa83IvWdT1vnWy58rKSuKeezP+G2rEZgBwcHyz4XCGhodlOODIyIjkcjlp3dyEzOXycv/BgwQnJibkMBAY4ltbW21xcHFxUWq1Wkhc+3JQix7ohZ6syerJtbm1s7OzUiwWEzGunfOk9UWe2ystnlWftlff8+KaSJwHxtnL+Pd4oxnoP2EGAG+zmZmZ0AA4iIePHsn29rY0my25bjZjrq29lMdPnsTc299PjW9svJK5uWfy/MULubiohvHDwyN5OjkZxhF7++5deL39+nUizhoQ1+yJ+TAHcpDrzo0eyEHcHQdRh5i7FuaTbgx01+qLZ9XrtWO/PwqFtnruneRaffsw9kboudlqSQuMDJEwQ/j5CAYRRCKKrq6v5fLqWhqXVxEvpQ42jMY+Y6Bb6Jdahq6h79Acgd5jM8RGcEyAglqjIdVaXSrVmpxfgFUpkxWjsU8YaRb6hY6hZ+ga+obOoffQDNoIcEwtcBIKypULKZYrUjgry/fSmXwvnskpWCgZjf3FQLfQL3QMPUPX0Dd0Dr3/MkP00yg2Qr0ROqhYPpeTr9/k4PhEPh58lg9G439C6Bm6hr6hc+j9Hr8K+M2ETwUcggCcdHD8Rd5//CRvdnZkfX1d8vm8rK6uGo19TegYeoauoW/o/LRQkp90/4Y0irIstgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
                             </uix:NCheckState.Target>
                           </uix:NCheckState>
                         </Sequence>
@@ -233,7 +330,7 @@
                   </uix:NApplicationCard>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="986,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1086,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -244,13 +341,13 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                       </ActivityAction.Argument>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,345" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,365" sap2010:WorkflowViewState.IdRef="Sequence_9">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">
                               <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">out_BoolValidateInitApplications</mca:CSharpReference>
@@ -260,14 +357,14 @@
                             <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
                           <ui:LogMessage.Message>
                             <InArgument x:TypeArguments="x:Object">
                               <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"Fallo abrir plataforma pajarito"</mca:CSharpValue>
                             </InArgument>
                           </ui:LogMessage.Message>
                         </ui:LogMessage>
-                        <Rethrow sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+                        <Rethrow sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
                       </Sequence>
                     </ActivityAction>
                   </Catch>
